@@ -1,4 +1,4 @@
-package com.techcamps.gestao.cursos;
+
 
 /**
  * Hello world!
