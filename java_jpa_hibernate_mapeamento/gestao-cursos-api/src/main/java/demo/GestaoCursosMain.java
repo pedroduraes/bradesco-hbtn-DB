@@ -4,7 +4,8 @@ import java.sql.SQLException;
 public class GestaoCursosMain {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println( "Iniciando aplicacao!" );
+        connect();
     }
 
         public static void connect() {
