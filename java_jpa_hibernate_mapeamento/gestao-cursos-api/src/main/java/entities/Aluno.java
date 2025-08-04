@@ -5,8 +5,9 @@ public class Aluno {
     private int id;
     private  String nomeCompleto;
     private String matricula;
-    private Date nascimento
+    private Date nascimento;
     private String email;
+
     
     public int getId() {
         return id;
@@ -38,5 +39,6 @@ public class Aluno {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+        
 }
