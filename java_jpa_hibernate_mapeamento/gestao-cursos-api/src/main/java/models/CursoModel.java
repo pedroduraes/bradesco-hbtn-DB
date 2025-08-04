@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+
 import entities.Curso;
 
 public class CursoModel {
@@ -25,4 +26,23 @@ public class CursoModel {
             System.out.println("Finalizando a transação");
         }
     }
+
+        public Curso findById(Long id) {
+        // TODO
+        return null;
+    }
+
+    public  List<Curso> findAll() {
+        // TODO
+        return null;
+    }
+
+    public void update(Curso curso) {
+        // TODO
+    }
+
+    public void delete(Curso curso) {
+        // TODO
+    }
+
 }
