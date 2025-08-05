@@ -3,6 +3,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import models.AlunoModel;
+
 public class GestaoCursosMain {
     public static void main( String[] args )
     {
@@ -16,6 +18,7 @@ public class GestaoCursosMain {
         var url = "jdbc:sqlite:database_admin_jpa.db";
 
         try (var conn = DriverManager.getConnection(url)) {
+            AlunoModel alunoModel = new AlunoModel();
             System.out.println("Connection to SQLite has been established.");
 
             Statement statement = conn.createStatement();
