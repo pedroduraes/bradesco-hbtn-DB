@@ -14,7 +14,6 @@ public class GestaoCursosMain {
 
         public static void connect() {
         // connection string
-        //var url = "jdbc:sqlite:database_admin_jpa.db";
         var url = "jdbc:sqlite:database_admin_jpa.db";
 
         try (var conn = DriverManager.getConnection(url)) {
@@ -25,15 +24,19 @@ public class GestaoCursosMain {
             statement.setQueryTimeout(30);  // Espera so por 30 segundos para conectar
 
             // Roda os comandos para o SQLite
-            statement.executeUpdate("DROP TABLE IF EXISTS terminalroot");
-            statement.executeUpdate("CREATE TABLE terminalroot (id INTEGER, name STRING)");
-            statement.executeUpdate("INSERT INTO terminalroot VALUES(1, 'Marcos Oliveira')");
-            statement.executeUpdate("INSERT INTO terminalroot VALUES(2, 'James Gosling')");
-            ResultSet rs = statement.executeQuery("SELECT * FROM terminalroot");
+            statement.executeUpdate("DROP TABLE IF EXISTS Alunos");
+            statement.executeUpdate("CREATE TABLE Alunos (id INTEGER PRIMARY KEY AUTOINCREMENT, nomeCompleto STRING, matricula STRING, nascimento DATE, email STRING)");
+            statement.executeUpdate("INSERT INTO Alunos VALUES(null,'Marcos Oliveira', '1', date(), 'marcos@email.com')");
+            statement.executeUpdate("INSERT INTO Alunos VALUES(null,'Maria Oliveira', '2', date(), 'maria@email.com')");
+            
+            ResultSet rs = statement.executeQuery("SELECT * FROM Alunos");
             while(rs.next()) {
                 // Ler os dados inseridos
-                System.out.println("NOME DO CARA  : " + rs.getString("name"));
-                System.out.println("IDENTIFICACAO : " + rs.getInt("id"));
+                System.out.println("IDENTIFICACAO   : " + rs.getInt("id"));
+                System.out.println("NOME            : " + rs.getString("nomeCompleto"));
+                System.out.println("Data Nasc.      : " + rs.getString("nascimento"));
+                System.out.println("Email           : " + rs.getString("email"));
+                
             }
             
 
