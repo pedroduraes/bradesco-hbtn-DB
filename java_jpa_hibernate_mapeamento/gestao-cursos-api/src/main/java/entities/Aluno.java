@@ -14,13 +14,17 @@ public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nomeCompleto;
     private String matricula;
     private Date nascimento;
     private String email;
 
-    public Aluno(int id, String nomeCompleto, String matricula, Date nascimento, String email) {
+    public Aluno() {
+    	super();
+    }
+    
+    public Aluno(Long id, String nomeCompleto, String matricula, Date nascimento, String email) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.matricula = matricula;
@@ -28,11 +32,11 @@ public class Aluno {
         this.email = email;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
