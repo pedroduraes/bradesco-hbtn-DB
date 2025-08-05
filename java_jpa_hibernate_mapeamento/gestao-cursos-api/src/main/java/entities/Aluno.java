@@ -1,5 +1,10 @@
 package entities;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+@Entity
 public class Aluno {
  
     private int id;
@@ -8,6 +13,14 @@ public class Aluno {
     private Date nascimento;
     private String email;
 
+    
+    public Aluno(int id, String nomeCompleto, String matricula, Date nascimento, String email) {
+        this.id = id;
+        this.nomeCompleto = nomeCompleto;
+        this.matricula = matricula;
+        this.nascimento = nascimento;
+        this.email = email;
+    }
     
     public int getId() {
         return id;
